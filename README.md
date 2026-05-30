@@ -50,195 +50,25 @@ The complete design flow includes:
 
 \---
 
+## Table : Comparison of Performance Metrics of Various Comparator Architectures
 
-
-\# Comparator Architectures
-
-
-
-\## 1. Resistive Divider Comparator
-
-
-
-\### Block Diagram
-
-
-
-!\[Block Diagram](Design/01-Comparators/01-Resistive-DIvider-Comparator/01-Block-Diagram/01\_Resistive\_divider\_comparator\_block\_diagram.jpg)
-
-
-
-\### Schematic
-
-
-
-!\[Schematic](Design/01-Comparators/01-Resistive-DIvider-Comparator/02-Schematics/01\_Resistive\_divider\_omparator\_circuit.jpg)
-
-
-
-\### Simulation Result
-
-
-
-!\[Simulation](Design/01-Comparators/01-Resistive-DIvider-Comparator/03-Simulation/01\_Resistive\_divider\_comparator\_simulation.jpg)
-
-
-
-\### Working Principle
-
-
-
-The resistive divider comparator generates a reference voltage using a resistor network. The input signal is compared against the reference voltage and the output switches according to the voltage difference.
-
-
-
-\### Result
-
-
-
-\* Successful threshold detection.
-
-\* Simple architecture.
-
-\* Higher static power consumption due to resistor network.
-
-
+| Comparator | Author(s) | Power (W) | Offset (V) | Delay (s) |
+|------------|-----------|-----------|------------|-----------|
+| Resistive Divider Comparator | Lauri Sumanen et al. | 13.98µ | 192.4m | 39.66n |
+| Charge Charging Comparator | D. Meganathan et al. | 6.92µ | 193.5m | 120.8p |
+| Latch Dynamic Comparator | C.-P. Huang et al. | 32.46µ | 206m | 30.08n |
+| Offset Compensated Comparator | Fei Yuvan | 31.29µ | 105m | 16.63n |
+| StrongARM Latch Comparator | L. Filippini, B. Taskin | 12.56µ | 189.2m | 77.72p |
+| Low Power Dynamic Comparator | Subhash Chevella et al. | 22.34µ | 185.8m | 30.2n |
+| Three Stage Comparator | Z. Li et al. | 32.215µ | 212m | 94.08p |
+| Two Stage Comparator | Y. Wang et al. | 51.675µ | 204m | 30.08n |
+| Elzakker Comparator | Z. Li et al. | 13.546µ | 209.6m | 30.11n |
+| Modified StrongARM Comparator | Maria R. Siukaeva et al. | 8.6929µ | 206.7m | 51.87p |
+| Voltage Sense Amplifier Comparator | Dinanath N. Donadkar et al. | 14.9016µ | 207.2m | 30.1n |
+| PMOS Preamplifier Comparator | Maria R. Siukaeva et al. | 15.57µ | 205.9m | 4.137n |
+| Dual Rail Double Tail Comparator | Dinanath N. Donadkar et al. | 31.6µ | 123.9m | 139.3p |
 
 \---
-
-
-
-\## 2. Charge Sharing Comparator
-
-
-
-\### Block Diagram
-
-
-
-!\[Block Diagram](Design/01-Comparators/02-Charge-Sharing-Comparator/01-Block-Diagram/02\_Charge\_sharing\_comparator\_block\_diagram.jpg)
-
-
-
-\### Schematic
-
-
-
-!\[Schematic](Design/01-Comparators/02-Charge-Sharing-Comparator/02-Schematics/02\_Charge\_sharing\_comparator\_circuit.jpg)
-
-
-
-\### Simulation Result
-
-
-
-!\[Simulation](Design/01-Comparators/02-Charge-Sharing-Comparator/03-Simulation/02\_Charge\_sharing\_comparator\_simulation.jpg)
-
-
-
-\### Working Principle
-
-
-
-The charge sharing comparator utilizes capacitor charge redistribution to determine the relationship between input and reference voltages.
-
-
-
-\### Result
-
-
-
-\* Reduced static power.
-
-\* Faster operation than resistive implementations.
-
-\* Sensitive to capacitor mismatch.
-
-
-
-\---
-
-
-
-\# Continue similarly for:
-
-
-
-3\. Latch Dynamic Comparator
-
-
-
-4\. Offset Compensated Comparator
-
-
-
-5\. Strong Arm Latch Comparator
-
-
-
-6\. Low Dynamic Comparator
-
-
-
-7\. Three Stage Dynamic Comparator
-
-
-
-8\. Two Stage Dynamic Comparator
-
-
-
-9\. Single Tail Comparator
-
-
-
-10\. Elzakker Comparator
-
-
-
-11\. Modified Strong Arm Latch Comparator
-
-
-
-12\. Voltage Sense Amplifier Comparator
-
-
-
-13\. PMOS Preamplifier Comparator
-
-
-
-14\. Dual Rail Double Tail Comparator
-
-
-
-\---
-
-
-
-\# Comparator Comparison Summary
-
-
-
-| Comparator        | Speed     | Power    | Complexity |
-
-| ----------------- | --------- | -------- | ---------- |
-
-| Resistive Divider | Low       | High     | Low        |
-
-| Charge Sharing    | Medium    | Low      | Medium     |
-
-| Latch Dynamic     | High      | Low      | Medium     |
-
-| Strong Arm Latch  | Very High | Very Low | Medium     |
-
-| Double Tail       | Very High | Low      | High       |
-
-
-
-\---
-
-
 
 \# ADC Design Flow
 
