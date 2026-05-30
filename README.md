@@ -1,288 +1,165 @@
-\# Regenerative Latch Comparator for Flash ADC
+# Regenerative Latch Comparator for Flash ADC
 
-
-
-\## Overview
-
-
+## Overview
 
 This project explores the design and simulation of multiple comparator architectures used in high-speed Analog-to-Digital Converters (ADCs). The study evaluates different comparator topologies and integrates the Strong-Arm Latch Comparator into a Flash ADC architecture.
 
-
-
 The complete design flow includes:
 
+* Comparator architecture analysis
+* Circuit-level implementation
+* Simulation and performance verification
+* Flash ADC subsystem development
+* ADC output validation
 
+---
 
-\* Comparator architecture analysis
+## Objectives
 
-\* Circuit-level implementation
+* Study various comparator architectures.
+* Compare static and dynamic comparator designs.
+* Analyze regenerative latch behavior.
+* Implement a Strong-Arm Latch Comparator.
+* Design a Flash ADC using the selected comparator.
+* Verify ADC operation through simulation.
 
-\* Simulation and performance verification
+---
 
-\* Flash ADC subsystem development
+## Comparison of Performance Metrics of Various Comparator Architectures
 
-\* ADC output validation
+| Comparator                         | Author(s)                   | Power (W) | Offset (V) | Delay (s) |
+| ---------------------------------- | --------------------------- | --------- | ---------- | --------- |
+| Resistive Divider Comparator       | Lauri Sumanen et al.        | 13.98µ    | 192.4m     | 39.66n    |
+| Charge Sharing Comparator          | D. Meganathan et al.        | 6.92µ     | 193.5m     | 120.8p    |
+| Latch Dynamic Comparator           | C.-P. Huang et al.          | 32.46µ    | 206m       | 30.08n    |
+| Offset Compensated Comparator      | Fei Yuvan                   | 31.29µ    | 105m       | 16.63n    |
+| StrongARM Latch Comparator         | L. Filippini, B. Taskin     | 12.56µ    | 189.2m     | 77.72p    |
+| Low Power Dynamic Comparator       | Subhash Chevella et al.     | 22.34µ    | 185.8m     | 30.2n     |
+| Three Stage Comparator             | Z. Li et al.                | 32.215µ   | 212m       | 94.08p    |
+| Two Stage Comparator               | Y. Wang et al.              | 51.675µ   | 204m       | 30.08n    |
+| Elzakker Comparator                | Z. Li et al.                | 13.546µ   | 209.6m     | 30.11n    |
+| Modified StrongARM Comparator      | Maria R. Siukaeva et al.    | 8.6929µ   | 206.7m     | 51.87p    |
+| Voltage Sense Amplifier Comparator | Dinanath N. Donadkar et al. | 14.9016µ  | 207.2m     | 30.1n     |
+| PMOS Preamplifier Comparator       | Maria R. Siukaeva et al.    | 15.57µ    | 205.9m     | 4.137n    |
+| Dual Rail Double Tail Comparator   | Dinanath N. Donadkar et al. | 31.6µ     | 123.9m     | 139.3p    |
 
+---
 
-
-\---
-
-
-
-\## Objectives
-
-
-
-\* Study various comparator architectures.
-
-\* Compare static and dynamic comparator designs.
-
-\* Analyze regenerative latch behavior.
-
-\* Implement a Strong-Arm Latch Comparator.
-
-\* Design a Flash ADC using the selected comparator.
-
-\* Verify ADC operation through simulation.
-
-
-
-\---
-
-## Table : Comparison of Performance Metrics of Various Comparator Architectures
-
-| Comparator | Author(s) | Power (W) | Offset (V) | Delay (s) |
-|------------|-----------|-----------|------------|-----------|
-| Resistive Divider Comparator | Lauri Sumanen et al. | 13.98µ | 192.4m | 39.66n |
-| Charge Charging Comparator | D. Meganathan et al. | 6.92µ | 193.5m | 120.8p |
-| Latch Dynamic Comparator | C.-P. Huang et al. | 32.46µ | 206m | 30.08n |
-| Offset Compensated Comparator | Fei Yuvan | 31.29µ | 105m | 16.63n |
-| StrongARM Latch Comparator | L. Filippini, B. Taskin | 12.56µ | 189.2m | 77.72p |
-| Low Power Dynamic Comparator | Subhash Chevella et al. | 22.34µ | 185.8m | 30.2n |
-| Three Stage Comparator | Z. Li et al. | 32.215µ | 212m | 94.08p |
-| Two Stage Comparator | Y. Wang et al. | 51.675µ | 204m | 30.08n |
-| Elzakker Comparator | Z. Li et al. | 13.546µ | 209.6m | 30.11n |
-| Modified StrongARM Comparator | Maria R. Siukaeva et al. | 8.6929µ | 206.7m | 51.87p |
-| Voltage Sense Amplifier Comparator | Dinanath N. Donadkar et al. | 14.9016µ | 207.2m | 30.1n |
-| PMOS Preamplifier Comparator | Maria R. Siukaeva et al. | 15.57µ | 205.9m | 4.137n |
-| Dual Rail Double Tail Comparator | Dinanath N. Donadkar et al. | 31.6µ | 123.9m | 139.3p |
-
-\---
-
-\# ADC Design Flow
-
-
+# ADC Design Flow
 
 The Flash ADC was designed using the Strong-Arm Latch Comparator due to its high speed and low power characteristics.
 
+## Step 1: Sample and Hold Circuit
 
+### Block Diagram
 
-\## Step 1: Sample and Hold Circuit
+![Sample and Hold Block](Design/02-ADC/01-Sample-And-Hold/01-Block-Diagram/sample_hold_block.jpg)
 
+### Schematic
 
+![Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/02-Schematics/sample_hold_schematic.jpg)
 
-\### Block Diagram
+### Simulation
 
+![Sample and Hold Simulation](Design/02-ADC/01-Sample-And-Hold/03-Simulation/sample_hold_simulation.jpg)
 
+### Function
 
-!\[Sample and Hold Block](Design/02-ADC/01-Sample-And-Hold/01-Block-Diagram/sample\_hold\_block.jpg)
+The Sample-and-Hold circuit samples the analog input signal and maintains a constant voltage level during the conversion process. This prevents input variations from affecting ADC accuracy.
 
+---
 
+## Step 2: StrongARM Latch Comparator
 
-\### Schematic
+### Block Diagram
 
+![Comparator Block](Design/02-ADC/03-Strong-Arm-Latch-Comparator/01-Block-Diagram/comparator_block.jpg)
 
+### Schematic
 
-!\[Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/02-Schematics/sample\_hold\_schematic.jpg)
+![Comparator Schematic](Design/02-ADC/03-Strong-Arm-Latch-Comparator/02-Schematics/comparator_schematic.jpg)
 
+### Simulation
 
+![Comparator Simulation](Design/02-ADC/03-Strong-Arm-Latch-Comparator/03-Simulation/comparator_simulation.jpg)
 
-\### Simulation
+### Function
 
+The StrongARM latch comparator compares the sampled input voltage against reference voltages generated by the resistor ladder. It provides high-speed comparison with low power consumption.
 
+---
 
-!\[Sample and Hold Simulation](Design/02-ADC/01-Sample-And-Hold/03-Simulation/sample\_hold\_simulation.jpg)
+## Step 3: Priority Encoder
 
+### Block Diagram
 
+![Priority Encoder Block](Design/02-ADC/02-Priority-Encoder/01-Block-Diagram/priority_encoder_block.jpg)
 
-\### Function
+### Schematic
 
+![Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/02-Schematics/priority_encoder_schematic.jpg)
 
+### Simulation
 
-Samples the analog input and maintains a constant voltage during ADC conversion.
+![Priority Encoder Simulation](Design/02-ADC/02-Priority-Encoder/03-Simulation/priority_encoder_simulation.jpg)
 
+### Function
 
+The Priority Encoder converts the thermometer-code output from the comparator array into an equivalent binary representation.
 
-\---
+---
 
+## Step 4: Flash ADC Integration
 
+### Block Diagram
 
-\## Step 2: Strong Arm Comparator
+![Flash ADC Block](Design/02-ADC/04-Flash-ADC/01-Block-Diagram/flash_adc_block.jpg)
 
+### Schematic
 
+![Flash ADC Schematic](Design/02-ADC/04-Flash-ADC/02-Schematics/flash_adc_schematic.jpg)
 
-\### Block Diagram
+### Simulation
 
+![Flash ADC Simulation](Design/02-ADC/04-Flash-ADC/03-Simulation/flash_adc_simulation.jpg)
 
+### Result
 
-!\[Comparator Block](Design/02-ADC/03-Strong-Arm-Latch-Comparator/01-Block-Diagram/comparator\_block.jpg)
+The Flash ADC successfully converts analog input voltages into digital output codes using high-speed regenerative latch comparators and a priority encoder.
 
+---
 
+## Tools Used
 
-\### Schematic
+* Cadence Virtuoso
+* CMOS Analog Circuit Design Techniques
+* Flash ADC Architecture
+* Analog and Mixed-Signal Simulation
 
+---
 
-
-!\[Comparator Schematic](Design/02-ADC/03-Strong-Arm-Latch-Comparator/02-Schematics/comparator\_schematic.jpg)
-
-
-
-\### Simulation
-
-
-
-!\[Comparator Simulation](Design/02-ADC/03-Strong-Arm-Latch-Comparator/03-Simulation/comparator\_simulation.jpg)
-
-
-
-\### Function
-
-
-
-Compares sampled voltage against reference ladder voltages.
-
-
-
-\---
-
-
-
-\## Step 3: Priority Encoder
-
-
-
-\### Block Diagram
-
-
-
-!\[Priority Encoder Block](Design/02-ADC/02-Priority-Encoder/01-Block-Diagram/priority\_encoder\_block.jpg)
-
-
-
-\### Schematic
-
-
-
-!\[Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/02-Schematics/priority\_encoder\_schematic.jpg)
-
-
-
-\### Simulation
-
-
-
-!\[Priority Encoder Simulation](Design/02-ADC/02-Priority-Encoder/03-Simulation/priority\_encoder\_simulation.jpg)
-
-
-
-\### Function
-
-
-
-Converts thermometer code generated by comparators into binary output.
-
-
-
-\---
-
-
-
-\## Step 4: Flash ADC Integration
-
-
-
-\### Block Diagram
-
-
-
-!\[Flash ADC Block](Design/02-ADC/04-Flash-ADC/01-Block-Diagram/flash\_adc\_block.jpg)
-
-
-
-\### Schematic
-
-
-
-!\[Flash ADC Schematic](Design/02-ADC/04-Flash-ADC/02-Schematics/flash\_adc\_schematic.jpg)
-
-
-
-\### Simulation
-
-
-
-!\[Flash ADC Simulation](Design/02-ADC/04-Flash-ADC/03-Simulation/flash\_adc\_simulation.jpg)
-
-
-
-\### Result
-
-
-
-The Flash ADC successfully converts analog input signals into digital output codes with high-speed operation enabled by regenerative latch comparators.
-
-
-
-\---
-
-
-
-\# Tools Used
-
-
-
-\* Cadence Virtuoso
-
-\* CMOS Analog Design Techniques
-
-\* Flash ADC Architecture
-
-
-
-\---
-
-
-
-\# Repository Structure
-
-
+## Repository Structure
 
 ```text
-
 Design/
-
-├── Comparators
-
-├── ADC
+├── 01-Comparators/
+│   ├── 01-Resistive-DIvider-Comparator/
+│   ├── 02-Charge-Sharing-Comparator/
+│   ├── ...
+│   └── 14-Dual-Rail-Double-Tail-Comparator/
+│
+└── 02-ADC/
+    ├── 01-Sample-And-Hold/
+    ├── 02-Priority-Encoder/
+    ├── 03-Strong-Arm-Latch-Comparator/
+    └── 04-Flash-ADC/
 
 Report/
-
 Result/
-
 ```
 
+---
 
+## Conclusion
 
-\---
-
-
-
-\# Conclusion
-
-
-
-Fourteen comparator architectures were designed and simulated to study their operating principles, speed, power consumption, and suitability for ADC applications. Based on the analysis, the Strong-Arm Latch Comparator was selected and integrated into a Flash ADC architecture. Simulation results validate successful comparator operation and ADC conversion functionality.
-
-
-
+Fourteen comparator architectures were designed, simulated, and evaluated based on power consumption, offset voltage, and propagation delay. Among them, the StrongARM Latch Comparator demonstrated an excellent balance between speed and power efficiency, making it suitable for Flash ADC applications. The final Flash ADC implementation successfully performs high-speed analog-to-digital conversion through the integration of Sample-and-Hold, comparator array, and priority encoder blocks.
