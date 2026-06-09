@@ -49,6 +49,8 @@ Each comparator architecture is documented using the following structure:
 - Block diagram
 - Circuit schematic
 - Simulation result
+- Working principle
+- Observed result
 
 The comparator folders are summarized below for quick access:
 
@@ -98,17 +100,9 @@ high-speed operation and low power consumption.
 
 ### Step 1: Sample and Hold Circuit
 
-#### Block Diagram
-
-![Sample and Hold Block Diagram](Design/02-ADC/01-Sample-And-Hold/01-Block-Diagram/sample_hold_block.jpg)
-
 #### Schematic
 
-![Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/02-Schematics/sample_hold_schematic.jpg)
-
-#### Simulation Result
-
-![Sample and Hold Simulation](Design/02-ADC/01-Sample-And-Hold/03-Simulation/sample_hold_simulation.jpg)
+![Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/01-Schematics/sample_and_hold_circuit.jpg)
 
 #### Function
 
@@ -119,15 +113,15 @@ voltage during ADC conversion.
 
 #### Block Diagram
 
-![Strong-Arm Latch Comparator Block Diagram](Design/02-ADC/03-Strong-Arm-Latch-Comparator/01-Block-Diagram/comparator_block.jpg)
+![Strong-Arm Latch Comparator Block Diagram](Design/02-ADC/03-Strong-Arm-Latch-Comparator/01-Block-Diagram/01_Strong_arm_latch_comparator_block_diagram.jpg)
 
 #### Schematic
 
-![Strong-Arm Latch Comparator Schematic](Design/02-ADC/03-Strong-Arm-Latch-Comparator/02-Schematics/comparator_schematic.jpg)
+![Strong-Arm Latch Comparator Schematic](Design/02-ADC/03-Strong-Arm-Latch-Comparator/02-Schematics/02_Strong_arm_latch_comparator_circuit.jpg)
 
 #### Simulation Result
 
-![Strong-Arm Latch Comparator Simulation](Design/02-ADC/03-Strong-Arm-Latch-Comparator/03-Simulation/comparator_simulation.jpg)
+![Strong-Arm Latch Comparator Simulation](Design/02-ADC/03-Strong-Arm-Latch-Comparator/03-Simulation/03_Strong_arm_latch_comparator_simulation.jpg)
 
 #### Function
 
@@ -136,17 +130,11 @@ and generates thermometer-code outputs.
 
 ### Step 3: Priority Encoder
 
-#### Block Diagram
-
-![Priority Encoder Block Diagram](Design/02-ADC/02-Priority-Encoder/01-Block-Diagram/priority_encoder_block.jpg)
-
 #### Schematic
 
-![Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/02-Schematics/priority_encoder_schematic.jpg)
+![16-to-4 Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/01-Schematics/16_to_4_priority_encoder_circuit.jpg)
 
-#### Simulation Result
-
-![Priority Encoder Simulation](Design/02-ADC/02-Priority-Encoder/03-Simulation/priority_encoder_simulation.jpg)
+![4-to-2 Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/01-Schematics/4_to_2_priority_encoder_circuit.jpg)
 
 #### Function
 
@@ -157,15 +145,15 @@ array into binary output.
 
 #### Block Diagram
 
-![Flash ADC Block Diagram](Design/02-ADC/04-Flash-ADC/01-Block-Diagram/flash_adc_block.jpg)
+![Flash ADC Block Diagram](Design/02-ADC/04-Flash-ADC/01-Block-Diagram/01_Block_diagram.png)
 
 #### Schematic
 
-![Flash ADC Schematic](Design/02-ADC/04-Flash-ADC/02-Schematics/flash_adc_schematic.jpg)
+![Flash ADC Schematic](Design/02-ADC/04-Flash-ADC/02-Schematics/4_bit_flash_ADC.jpg)
 
 #### Simulation Result
 
-![Flash ADC Simulation](Design/02-ADC/04-Flash-ADC/03-Simulation/flash_adc_simulation.jpg)
+![Flash ADC Simulation](Design/02-ADC/04-Flash-ADC/03-Simulation/4_bit_flash_ADC_simulation.jpg)
 
 #### Result
 
