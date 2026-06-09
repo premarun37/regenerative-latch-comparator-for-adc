@@ -102,7 +102,7 @@ high-speed operation and low power consumption.
 
 #### Schematic
 
-![Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/01-Schematics/sample_and_hold_circuit.jpg)
+![Sample and Hold Schematic](Design/02-ADC/01-Sample-And-Hold/01-Schematics/sample_and_hold_circuit2.jpg)
 
 #### Function
 
