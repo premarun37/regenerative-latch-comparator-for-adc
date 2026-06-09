@@ -105,22 +105,24 @@ the input voltage with the reference voltage.
 
 ### 3. Latch Dynamic Comparator
 
-Use the same documentation format for the remaining comparator architectures:
+The comparator folders are summarized below for quick access:
 
 | No. | Comparator Architecture |
 |-----|-------------------------|
-| 3 | Latch Dynamic Comparator |
-| 4 | Offset Compensated Comparator |
-| 5 | Strong-Arm Latch Comparator |
-| 6 | Low Power Dynamic Comparator |
-| 7 | Three Stage Dynamic Comparator |
-| 8 | Two Stage Dynamic Comparator |
-| 9 | Single Tail Comparator |
-| 10 | Elzakker Comparator |
-| 11 | Modified Strong-Arm Latch Comparator |
-| 12 | Voltage Sense Amplifier Comparator |
-| 13 | PMOS Preamplifier Comparator |
-| 14 | Dual Rail Double Tail Comparator |
+| 1 | [Resistive Divider Comparator](Design/01-Comparators/01-Resistive-DIvider-Comparator/) |
+| 2 | [Charge Sharing Comparator](Design/01-Comparators/02-Charge-Sharing-Comparator/) |
+| 3 | [Latch Dynamic Comparator](Design/01-Comparators/03-Latch-Dynamic-Comparator/) |
+| 4 | [Offset Compensated Comparator](Design/01-Comparators/04-Offset-Compensated-Comparator/) |
+| 5 | [Strong-Arm Latch Comparator](Design/01-Comparators/05-Strong-Arm-Latch-Comparator/) |
+| 6 | [Low Power Dynamic Comparator](Design/01-Comparators/06-Low-Power-Dynamic-Comparator/) |
+| 7 | [Three Stage Dynamic Comparator](Design/01-Comparators/07-Three-Stage-Dynamic-Comparator/) |
+| 8 | [Two Stage Dynamic Comparator](Design/01-Comparators/08-Two-Stage-Dynamic-Comparator/) |
+| 9 | [Single Tail Comparator](Design/01-Comparators/09-Single-Tail-Comparator/) |
+| 10 | [Elzakker Comparator](Design/01-Comparators/10-Elzakker-Comparator/) |
+| 11 | [Modified Strong-Arm Latch Comparator](Design/01-Comparators/11-Modified-Strong-Arm-Latch-Comparator/) |
+| 12 | [Voltage Sense Amplifier Comparator](Design/01-Comparators/12-Voltage-Sense-Amplifier-Comparator/) |
+| 13 | [PMOS Preamplifier Comparator](Design/01-Comparators/13-PMOS-Preamplifier-Comparator/) |
+| 14 | [Dual Rail Double Tail Comparator](Design/01-Comparators/14-Dual-Rail-Double-Tail-Comparator/) |
 
 ## Comparator Comparison Summary
 
