@@ -132,9 +132,13 @@ and generates thermometer-code outputs.
 
 #### Schematic
 
+#### 4-to-2 Priority Encoder Schematic
+![4-to-2 Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/01-Schematics/4_to_2_priority_encoder_circuit.jpg)
+
+#### 16-to-4 Priority Encoder Schematic
 ![16-to-4 Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/01-Schematics/16_to_4_priority_encoder_circuit.jpg)
 
-![4-to-2 Priority Encoder Schematic](Design/02-ADC/02-Priority-Encoder/01-Schematics/4_to_2_priority_encoder_circuit.jpg)
+
 
 #### Function
 
